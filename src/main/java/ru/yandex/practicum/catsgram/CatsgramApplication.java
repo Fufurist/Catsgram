@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class CatsgramApplication {
-    public static void main(String[] args){
+    public static void main(final String[] args) {
         final Gson gson = new Gson();
         final Scanner scanner = new Scanner(System.in);
         System.out.println("Введите Json => ");
         final String input = scanner.nextLine();
-        try{
+        try {
             gson.fromJson(input, Map.class);
             System.out.println("Был введён корректный Json");
-        } catch (JsonSyntaxException e){
+        } catch (JsonSyntaxException e) {
             System.out.println("Был введён некорректный Json");
         }
     }
